@@ -15,39 +15,53 @@
             <span>Administrador</span> 
             <button>Sair</button>
         </div>
-    </header>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Explorar</a></li>
-            <li><a href="#">Meu Caderninho</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Meu Caderninho</a></li>
+            </ul>
+        </nav>
 
-    <main>
-        <section class="search-filters-container">
-            <h3>Painel de Filtros Avançados</h3>
-            <form>
-                <select id="filter-cargo">
-                    <option value="">Todos os Cargos</option>
-                    <option value="presidente">Presidente</option>
-                    <option value="deputadoFederal">Deputado federal</option>
-                    <option value="deputadoEstadual">Deputado estadual</option>
-                    <option value="senador">Senador</option>
-                    <option value="governador">Governador</option>
-                </select>
+        <main>
+            <section class="search-filters-container">
+                <h3>Painel de Filtros Avançados</h3>
+                <form>
+                    <select id="filter-cargo">
+                        <option value="">Todos os Cargos</option>
+                        <option value="presidente">Presidente</option>
+                        <option value="deputadoFederal">Deputado federal</option>
+                        <option value="deputadoEstadual">Deputado estadual</option>
+                        <option value="senador">Senador</option>
+                        <option value="governador">Governador</option>
+                    </select>
+                    
+                    <select id="filter-area">
+                        <option value="">Todas as Áreas</option>
+                        <option value="saude">Saúde Pública</option>
+                    </select>
+
+                    <select id="filter-regiao">
+                        <option value="">Todas as Regiões</option>
+                        <option value="nacional">Nacional</option>
+                    </select>
+                </form>
+            </section>
+            
+            <section class="proposals-section">
+                <h3>Diretrizes Encontradas</h3>
                 
-                <select id="filter-area">
-                    <option value="">Todas as Áreas</option>
-                    <option value="saude">Saúde Pública</option>
-                </select>
-
-                <select id="filter-regiao">
-                    <option value="">Todas as Regiões</option>
-                    <option value="nacional">Nacional</option>
-                </select>
-            </form>
-        </section>
+                <div class="proposals-grid">
+                    <article class="proposal-card">
+                        <h4>Programa Nacional de IA</h4>
+                        <p>Descrição da proposta aqui...</p>
+                        
+                        <button class="btn-favorite">Salvar no Caderninho</button>
+                    </article>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

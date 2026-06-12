@@ -138,6 +138,75 @@ main {
     background-color: #ffffff;
 }
 
+.proposals-section {
+    margin-top: 3rem;
+}
+
+.proposals-section h3 {
+    color: #1e293b;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.proposals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.proposal-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proposal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-card h4 {
+    color: #1e293b;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.proposal-card p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.btn-favorite {
+    background-color: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-favorite:hover {
+    background-color: #fef9c3; /* Fundo amarelo super claro */
+    color: #ca8a04; /* Texto dourado/amarelo escuro */
+    border-color: #fde047; /* Borda amarela */
+}
+
 @media (max-width: 768px) {
     .search-filters-container form {
         flex-direction: column;
