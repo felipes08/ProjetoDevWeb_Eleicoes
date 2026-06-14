@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VotoConsciente 2026 - Autenticação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-vote-yea"></i>
+                <h2>VotoConsciente <span>2026</span></h2>
+            </div>
+
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab active">Entrar</button>
+                <button id="tab-register" class="auth-tab">Cadastrar</button>
+            </div>
+
+            <form id="auth-form">
+                <div class="input-group">
+                    <label for="auth-email">E-mail</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="auth-email" required placeholder="seu@email.com">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="auth-password">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="auth-password" required placeholder="••••••••">
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-auth-submit" class="btn-primary-auth">Entrar</button>
+            </form>
+            <p id="auth-message" class="auth-message"></p>
+        </div>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+</body>
+
+</html>
