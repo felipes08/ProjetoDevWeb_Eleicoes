@@ -1,4 +1,20 @@
-*{
+:root {
+    --primary-color: #1e293b;
+    --accent-color: #0284c7;
+    --accent-hover: #0369a1;
+    --favorite-color: #eab308;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-light: #e2e8f0;
+    --radius-md: 8px;
+    --radius-sm: 4px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,23 +22,47 @@
 }
 
 body {
-    background-color: #f8fafc;
+    background-color: var(--bg-main);
 }
 
+/* ==========================================================================
+   HEADER & ESTADO DE AUTENTICAÇÃO
+   ========================================================================== */
+
 header {
-    background-color: #1e293b;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
 }
 
 .logo h1 {
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+}
+
+.logo h1 span {
+    color: var(--accent-color);
 }
 
 .user-status {
@@ -32,59 +72,96 @@ header {
 }
 
 .user-status span {
-    background-color: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background-color: rgba(2, 132, 199, 0.15);
+    color: var(--accent-color);
+    border: 1px solid rgba(2, 132, 199, 0.3);
     padding: 0.35rem 0.8rem;
     font-size: 0.85rem;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .user-status button {
     background-color: transparent;
-    color: #cbd5e1;
+    color: var(--text-muted);
     border: 1px solid #475569;
     padding: 0.4rem 1rem;
     font-size: 0.9rem;
     font-weight: 500;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .user-status button:hover {
-    color: #ffffff;
-    border-color: #ffffff;
+    color: var(--bg-card);
+    border-color: var(--bg-card);
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* ==========================================================================
+   NAVEGAÇÃO (MENU PRINCIPAL)
+   ========================================================================== */
 
 nav {
-    background-color: #0f172a;
-    padding: 0.8rem 2.5rem;
+    background-color: #111827;
+    padding: 0.5rem 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-nav a {
-    color: #94a3b8;
-    text-decoration: none; 
+nav ul li a {
+    color: #9ca3af;
+    text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    padding: 0.3rem 0;
-    transition: color 0.2s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
 }
 
-nav a:hover {
-    color: #38bdf8;
+nav ul li a:hover, nav ul li a.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
 }
+
+nav ul li a.active {
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.admin-action {
+    margin-left: auto;
+}
+
+.btn-admin-add {
+    background-color: var(--accent-color);
+    color: white !important;
+}
+
+.btn-admin-add:hover {
+    background-color: var(--accent-hover) !important;
+}
+
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
 
 main {
     max-width: 1200px;
@@ -92,20 +169,52 @@ main {
     padding: 0 2.5rem;
 }
 
-.search-filters-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
+.hero-section {
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%);
+    color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);    
 }
 
-.search-filters-container h3 {
-    color: #1e293b;
-    font-size: 1.3rem;
+.hero-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+    color: var(--bg-main);
+    font-size: 1.05rem;
+    max-width: 800px;
+}
+
+
+/* ==========================================================================
+   SEÇÃO DE BUSCA E FILTROS
+   ========================================================================== */
+
+.search-filters-container {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.container-title {
     margin-bottom: 1.5rem;
-    border-left: 4px solid #38bdf8;
+    border-left: 4px solid var(--accent-color);
     padding-left: 0.75rem;
+}
+
+.container-title h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.container-title p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .search-filters-container form {
@@ -119,34 +228,39 @@ main {
     min-width: 200px;
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
-    color: #334155;
-    background-color: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
 }
 
 .search-filters-container select:hover {
-    border-color: #94a3b8;
+    border-color: var(--text-muted);
 }
 
 .search-filters-container select:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    background-color: #ffffff;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+    background-color: var(--bg-card);
 }
+
+
+/* ==========================================================================
+   GRID DE RESULTADOS E CARDS DE PROPOSTAS
+   ========================================================================== */
 
 .proposals-section {
     margin-top: 3rem;
 }
 
 .proposals-section h3 {
-    color: #1e293b;
+    color: var(--primary-color);
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid var(--border-light);
     padding-bottom: 0.5rem;
 }
 
@@ -157,11 +271,11 @@ main {
 }
 
 .proposal-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -169,18 +283,18 @@ main {
 
 .proposal-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .proposal-card h4 {
-    color: #1e293b;
+    color: var(--primary-color);
     font-size: 1.15rem;
     margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
 .proposal-card p {
-    color: #475569;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1.5rem;
@@ -189,12 +303,12 @@ main {
 
 .btn-favorite {
     background-color: transparent;
-    color: #64748b;
-    border: 1px solid #cbd5e1;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: center;
@@ -202,13 +316,94 @@ main {
 }
 
 .btn-favorite:hover {
-    background-color: #fef9c3; /* Fundo amarelo super claro */
-    color: #ca8a04; /* Texto dourado/amarelo escuro */
-    border-color: #fde047; /* Borda amarela */
+    background-color: #fef9c3;
+    color: var(--favorite-color);
+    border-color: var(--favorite-color);
 }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+    background-color: var(--primary-color);
+    color: #94a3b8;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 4px solid var(--accent-color);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-details p {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.academic-team {
+    color: white;
+    font-weight: 500;
+}
+
+.academic-inst {
+    font-size: 0.8rem !important;
+    color: #64748b;
+}
+
+.github-link {
+    color: white;
+    background-color: #0f172a;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: block;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #334155;
+    transition: background-color 0.2s;
+}
+
+.github-link:hover {
+    background-color: #1e293b;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
 
 @media (max-width: 768px) {
     .search-filters-container form {
         flex-direction: column;
+    }
+    .header-container, .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .admin-action {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .admin-action a {
+        display: block;
+        text-align: center;
     }
 }

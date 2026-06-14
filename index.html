@@ -5,29 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VotoConsciente 2026 - Guia de Propostas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
     <body>
         <header>
-        <div class="logo">
-            <h1>VotoConsciente 2026</h1>
-        </div>
-        <div class="user-status">
-            <span>Administrador</span> 
-            <button>Sair</button>
-        </div>
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-vote-yea"></i>
+                    <h1>VotoConsciente <span>2026</span></h1>
+                </div>
+                <div class="user-status">
+                    <span><i class="fas fa-user-shield"></i> Administrador</span> 
+                    <button>Sair</button>
+                </div>
+            </div>    
         </header>
 
         <nav>
+        <div class="nav-container">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Explorar</a></li>
-                <li><a href="#">Meu Caderninho</a></li>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Explorar Propostas</a></li>
+                <li><a href="#" ><i class="fas fa-bookmark"></i> Meu Caderninho</a></li>
+                <!-- Item visível apenas para o tipo Administrador -->
+                <li class="admin-action"><a href="#" class="btn-admin-add"><i class="fas fa-plus-circle"></i> Nova Proposta</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
         <main>
+
+            <section class="hero-section">
+                <h2>Plataforma Unificada de Propostas Cívicas</h2>
+                <p>Navegue pelas principais diretrizes de campanha, filtre por temas cruciais e guarde seus dados de interesse local ou nacional.</p>
+            </section>
+
             <section class="search-filters-container">
-                <h3>Painel de Filtros Avançados</h3>
+                <div class="container-title">
+                    <h3><i class="fas fa-filter"></i> Painel de Filtros Avançados</h3>
+                    <p>Combine os critérios abaixo para encontrar diretrizes específicas de forma dinâmica.</p>
+                </div>
                 <form>
                     <select id="filter-cargo">
                         <option value="">Todos os Cargos</option>
@@ -62,6 +79,23 @@
                     </article>
                 </div>
             </section>
+
         </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-details">
+                    <p>&copy; 2026 VotoConsciente - Plataforma Acadêmica Experimental.</p>
+                    <p class="academic-team">Aluno: Felipe Silva de Almeida</p>
+                    <p class="academic-inst">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) | Professor Orientador: Bianca Maria Pedrosa</p>
+                </div>
+                
+                <div class="footer-git">
+                    <a href="https://github.com/felipes08/ProjetoDevWeb_Eleicoes" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Ver Código no GitHub
+                    </a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
