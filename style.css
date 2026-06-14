@@ -216,35 +216,78 @@ main {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-
-.search-filters-container form {
+.filters-form {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
-    flex-direction: row;
 }
 
-.search-filters-container select {
-    flex: 1;
-    min-width: 200px;
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search-box label, .filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--text-main);
-    background-color: var(--bg-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-muted);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-size: 1rem;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    cursor: pointer;
     outline: none;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s;
 }
 
-.search-filters-container select:hover {
-    border-color: var(--text-muted);
-}
-
-.search-filters-container select:focus {
+.input-wrapper input:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
-    background-color: var(--bg-card);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.filters-selectors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group select {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-main);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.filter-group select:focus {
+    border-color: var(--accent-color);
 }
 
 

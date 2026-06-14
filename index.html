@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,95 +8,124 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-    <body>
-        <header>
-            <div class="header-container">
-                <div class="logo">
-                    <i class="fas fa-vote-yea"></i>
-                    <h1>VotoConsciente <span>2026</span></h1>
-                </div>
-                <div class="user-status">
-                    <span><i class="fas fa-user-shield"></i> Administrador</span> 
-                    <button>Sair</button>
-                </div>
-            </div>    
-        </header>
 
-        <nav>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-vote-yea"></i>
+                <h1>VotoConsciente <span>2026</span></h1>
+            </div>
+            <div class="user-status">
+                <span><i class="fas fa-user-shield"></i> Administrador</span>
+                <button>Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
         <div class="nav-container">
             <ul>
                 <li><a href="#" class="active"><i class="fas fa-home"></i> Início</a></li>
                 <li><a href="#"><i class="fas fa-search"></i> Explorar Propostas</a></li>
-                <li><a href="#" ><i class="fas fa-bookmark"></i> Meu Caderninho</a></li>
+                <li><a href="#"><i class="fas fa-bookmark"></i> Meu Caderninho</a></li>
                 <!-- Item visível apenas para o tipo Administrador -->
-                <li class="admin-action"><a href="#" class="btn-admin-add"><i class="fas fa-plus-circle"></i> Nova Proposta</a></li>
+                <li class="admin-action"><a href="#" class="btn-admin-add"><i class="fas fa-plus-circle"></i> Nova
+                        Proposta</a></li>
             </ul>
         </div>
     </nav>
 
-        <main>
+    <main>
 
-            <section class="hero-section">
-                <h2>Plataforma Unificada de Propostas Cívicas</h2>
-                <p>Navegue pelas principais diretrizes de campanha, filtre por temas cruciais e guarde seus dados de interesse local ou nacional.</p>
-            </section>
+        <section class="hero-section">
+            <h2>Plataforma Unificada de Propostas Cívicas</h2>
+            <p>Navegue pelas principais diretrizes de campanha, filtre por temas cruciais e guarde seus dados de
+                interesse local ou nacional.</p>
+        </section>
 
-            <section class="search-filters-container">
-                <div class="container-title">
-                    <h3><i class="fas fa-filter"></i> Painel de Filtros Avançados</h3>
-                    <p>Combine os critérios abaixo para encontrar diretrizes específicas de forma dinâmica.</p>
-                </div>
-                <form>
-                    <select id="filter-cargo">
-                        <option value="">Todos os Cargos</option>
-                        <option value="presidente">Presidente</option>
-                        <option value="deputadoFederal">Deputado federal</option>
-                        <option value="deputadoEstadual">Deputado estadual</option>
-                        <option value="senador">Senador</option>
-                        <option value="governador">Governador</option>
-                    </select>
-                    
-                    <select id="filter-area">
-                        <option value="">Todas as Áreas</option>
-                        <option value="saude">Saúde Pública</option>
-                    </select>
-
-                    <select id="filter-regiao">
-                        <option value="">Todas as Regiões</option>
-                        <option value="nacional">Nacional</option>
-                    </select>
-                </form>
-            </section>
-            
-            <section class="proposals-section">
-                <h3>Diretrizes Encontradas</h3>
-                
-                <div class="proposals-grid">
-                    <article class="proposal-card">
-                        <h4>Programa Nacional de IA</h4>
-                        <p>Descrição da proposta aqui...</p>
-                        
-                        <button class="btn-favorite">Salvar no Caderninho</button>
-                    </article>
-                </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-details">
-                    <p>&copy; 2026 VotoConsciente - Plataforma Acadêmica Experimental.</p>
-                    <p class="academic-team">Aluno: Felipe Silva de Almeida</p>
-                    <p class="academic-inst">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) | Professor Orientador: Bianca Maria Pedrosa</p>
-                </div>
-                
-                <div class="footer-git">
-                    <a href="https://github.com/felipes08/ProjetoDevWeb_Eleicoes" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> Ver Código no GitHub
-                    </a>
-                </div>
+        <section class="search-filters-container">
+            <div class="container-title">
+                <h3><i class="fas fa-filter"></i> Painel de Filtros Avançados</h3>
+                <p>Combine os critérios abaixo para encontrar diretrizes específicas de forma dinâmica.</p>
             </div>
-        </footer>
-    </body>
+
+            <form class="filters-form" onsubmit="event.preventDefault();">
+                <div class="search-box">
+                    <label for="search-input">Busca por palavra-chave</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-search input-icon"></i>
+                        <input type="text" id="search-input" placeholder="Ex: hospital, tecnologia, saneamento...">
+                    </div>
+                </div>
+
+                <div class="filters-selectors">
+                    <div class="filter-group">
+                        <label for="filter-cargo"><i class="fas fa-id-card"></i> 1. Cargo Eletivo</label>
+                        <select id="filter-cargo">
+                            <option value="">Todos os Cargos</option>
+                            <option value="presidente">Presidente</option>
+                            <option value="governador">Governador</option>
+                            <option value="senador">Senador</option>
+                            <option value="deputado">Deputado Federal</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-area"><i class="fas fa-graduation-cap"></i> 2. Área Temática</label>
+                        <select id="filter-area">
+                            <option value="">Todas as Áreas</option>
+                            <option value="saude">Saúde Pública</option>
+                            <option value="educacao">Educação & Tecnologia</option>
+                            <option value="seguranca">Segurança</option>
+                            <option value="infraestrutura">Infraestrutura</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-regiao"><i class="fas fa-map-marker-alt"></i> 3. Região / Escopo</label>
+                        <select id="filter-regiao">
+                            <option value="">Todas as Regiões</option>
+                            <option value="nacional">Escopo Nacional</option>
+                            <option value="sp-capital">São Paulo (Capital)</option>
+                            <option value="rio">Rio de Janeiro</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="proposals-section">
+            <h3>Diretrizes Encontradas</h3>
+
+            <div class="proposals-grid">
+                <article class="proposal-card">
+                    <h4>Programa Nacional de IA</h4>
+                    <p>Descrição da proposta aqui...</p>
+
+                    <button class="btn-favorite">Salvar no Caderninho</button>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-details">
+                <p>&copy; 2026 VotoConsciente - Plataforma Acadêmica Experimental.</p>
+                <p class="academic-team">Aluno: Felipe Silva de Almeida</p>
+                <p class="academic-inst">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) |
+                    Professor Orientador: Bianca Maria Pedrosa</p>
+            </div>
+
+            <div class="footer-git">
+                <a href="https://github.com/felipes08/ProjetoDevWeb_Eleicoes" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> Ver Código no GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
