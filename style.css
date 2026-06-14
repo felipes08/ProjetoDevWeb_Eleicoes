@@ -299,12 +299,27 @@ main {
     margin-top: 3rem;
 }
 
-.proposals-section h3 {
-    color: var(--primary-color);
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--border-light);
+.proposals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.proposals-header h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.counter-badge {
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
 }
 
 .proposals-grid {
@@ -321,6 +336,7 @@ main {
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
