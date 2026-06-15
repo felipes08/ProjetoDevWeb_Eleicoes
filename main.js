@@ -226,3 +226,65 @@ async function carregarPropostas() {
         proposalsGrid.innerHTML = "<p style='grid-column: 1 / -1; text-align: center; color: #ef4444;'>Erro ao carregar do banco. Verifique o console F12.</p>";
     }
 }
+
+if (proposalsGrid) {
+    proposalsGrid.addEventListener("click", async (e) => {
+        const usuarioLogado = auth.currentUser;
+        if (!usuarioLogado) return;
+
+        const btnFav = e.target.closest(".btn-favorite");
+        if (btnFav) {
+            const propostaId = btnFav.getAttribute("data-id");
+            const favoritoId = `${usuarioLogado.uid}_${propostaId}`;
+            const docRef = doc(db, "favoritos", favoritoId);
+
+            try {
+                if (btnFav.classList.contains("favoritado")) {
+                    await deleteDoc(docRef);
+                    if (abaAtual === "caderninho") {
+                        carregarPropostas(); 
+                    } else {
+                        btnFav.classList.remove("favoritado");
+                        btnFav.innerHTML = '<i class="far fa-star"></i> Favoritar Diretriz';
+                        btnFav.style.backgroundColor = "transparent";
+                        btnFav.style.borderColor = "var(--border-light)";
+                        btnFav.style.color = "var(--text-main)";
+                    }
+                } else {
+                    await setDoc(docRef, {
+                        usuarioId: usuarioLogado.uid,
+                        propostaId: propostaId,
+                        dataAdicao: new Date().toISOString()
+                    });
+                    btnFav.classList.add("favoritado");
+                    btnFav.innerHTML = '<i class="fas fa-star" style="color: #eab308;"></i> Salvo no Caderninho';
+                    btnFav.style.backgroundColor = "#fef9c3";
+                    btnFav.style.borderColor = "#eab308";
+                    btnFav.style.color = "#ca8a04";
+                }
+            } catch (error) {
+                console.error("Erro ao favoritar:", error);
+            }
+        }
+
+        const btnDel = e.target.closest(".btn-delete");
+        if (btnDel) {
+            const propostaId = btnDel.getAttribute("data-id");
+            const confirmacao = confirm("Deseja excluir esta diretriz permanentemente do banco de dados?");
+            
+            if (confirmacao) {
+                try {
+                    const textoOriginal = btnDel.innerHTML;
+                    btnDel.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Excluindo...';
+                    
+                    await deleteDoc(doc(db, "propostas", propostaId));
+                    carregarPropostas(); 
+                } catch (error) {
+                    console.error("Erro ao excluir:", error);
+                    alert("Erro ao tentar excluir a proposta.");
+                    btnDel.innerHTML = textoOriginal;
+                }
+            }
+        }
+    });
+}
