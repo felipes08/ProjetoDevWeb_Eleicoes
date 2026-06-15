@@ -1,4 +1,5 @@
 VotoConsciente 2026
+
 O VotoConsciente 2026 é uma plataforma acadêmica desenvolvida para auxiliar o eleitor brasileiro a navegar pelo cenário político das eleições de 2026. Em um momento onde a informação precisa ser acessível e organizada, este projeto busca democratizar o conhecimento sobre as diretrizes e propostas de candidatos a cargos eletivos.
 
 [Acesse o VotoConsciente 2026](https://projetodevweb-eleicoes.web.app/index.html)
