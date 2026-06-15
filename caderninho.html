@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Caderninho - VotoConsciente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-vote-yea"></i>
+                <h1>VotoConsciente <span>2026</span></h1>
+            </div>
+            <div class="user-status">
+                <span><i class="fas fa-user-shield"></i> Administrador</span>
+                <button>Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="caderninho.html" class="active"><i class="fas fa-bookmark"></i> Meu Caderninho</a></li>
+                <li class="admin-action"><a href="#" class="btn-admin-add"><i class="fas fa-plus-circle"></i> Nova Proposta</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="proposals-section" style="margin-top: 1rem;">
+            <div class="proposals-header">
+                <h3><i class="fas fa-star" style="color: #eab308; margin-right: 8px;"></i> Minhas Diretrizes Salvas</h3>
+                <span class="counter-badge">0 Salvas</span>
+            </div>
+
+            <div class="proposals-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="modal-proposta" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Cadastrar Nova Proposta</h3>
+                <button id="btn-close-modal" class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="form-nova-proposta">
+                <div class="input-group">
+                    <label for="prop-titulo">Título da Proposta</label>
+                    <input type="text" id="prop-titulo" class="form-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="prop-desc">Descrição Detalhada</label>
+                    <textarea id="prop-desc" rows="4" class="form-input" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="prop-candidato">Nome do Candidato</label>
+                    <input type="text" id="prop-candidato" class="form-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="prop-partido">Partido</label>
+                    <input type="text" id="prop-partido" class="form-input" required>
+                </div>
+                <div class="filters-selectors">
+                    <div class="filter-group">
+                        <label for="prop-cargo">Cargo</label>
+                        <select id="prop-cargo" class="form-input" required>
+                            <option value="presidente">Presidente</option>
+                            <option value="governador">Governador</option>
+                            <option value="senador">Senador</option>
+                            <option value="deputado">Deputado Federal</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="prop-area">Área Temática</label>
+                        <select id="prop-area" class="form-input" required>
+                            <option value="saude">Saúde Pública</option>
+                            <option value="educacao">Educação & Tecnologia</option>
+                            <option value="seguranca">Segurança</option>
+                            <option value="infraestrutura">Infraestrutura</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="prop-regiao">Região/Escopo</label>
+                        <select id="prop-regiao" class="form-input" required>
+                            <option value="nacional">Escopo Nacional</option>
+                            <option value="sp-capital">São Paulo (Capital)</option>
+                            <option value="rio">Rio de Janeiro</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary-auth" style="margin-top: 1.5rem;">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-details">
+                <p>&copy; 2026 VotoConsciente - Plataforma Acadêmica Experimental.</p>
+                <p class="academic-team">Aluno: Felipe Silva de Almeida</p>
+                <p class="academic-inst">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) |
+                    Professor Orientador: Bianca Maria Pedrosa</p>
+            </div>
+
+            <div class="footer-git">
+                <a href="https://github.com/felipes08/ProjetoDevWeb_Eleicoes" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> Ver Código no GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
