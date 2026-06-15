@@ -288,3 +288,56 @@ if (proposalsGrid) {
         }
     });
 }
+
+const searchInput = document.getElementById("search-input");
+const filterCargo = document.getElementById("filter-cargo");
+const filterArea = document.getElementById("filter-area");
+const filterRegiao = document.getElementById("filter-regiao");
+
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function aplicarFiltros() {
+    const termoBuscaOriginal = searchInput ? searchInput.value.toLowerCase() : "";
+    const termoBusca = removerAcentos(termoBuscaOriginal);
+
+    const cargoSelecionado = filterCargo ? filterCargo.value.toLowerCase() : "";
+    const areaSelecionada = filterArea ? filterArea.value.toLowerCase() : "";
+    const regiaoSelecionada = filterRegiao ? filterRegiao.value.toLowerCase() : "";
+
+    const cards = document.querySelectorAll(".proposal-card");
+    let countVisiveis = 0;
+
+    cards.forEach(card => {
+        const textoDoCartao = card.textContent.toLowerCase();
+        const textoLimpo = removerAcentos(textoDoCartao);
+        
+        const cardCargo = card.getAttribute("data-cargo") || "";
+        const cardArea = card.getAttribute("data-area") || "";
+        const cardRegiao = card.getAttribute("data-regiao") || "";
+
+        const matchTexto = termoBusca === "" || textoLimpo.includes(termoBusca);
+        const matchCargo = cargoSelecionado === "" || cardCargo === cargoSelecionado;
+        const matchArea = areaSelecionada === "" || cardArea === areaSelecionada;
+        const matchRegiao = regiaoSelecionada === "" || cardRegiao === regiaoSelecionada;
+
+        if (matchTexto && matchCargo && matchArea && matchRegiao) {
+            card.style.display = "flex";
+            countVisiveis++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    if (counterBadge) {
+        counterBadge.textContent = abaAtual === "caderninho"
+            ? `${countVisiveis} Salva${countVisiveis !== 1 ? 's' : ''}`
+            : `${countVisiveis} Encontrada${countVisiveis !== 1 ? 's' : ''}`;
+    }
+}
+
+if (searchInput) searchInput.addEventListener("input", aplicarFiltros);
+if (filterCargo) filterCargo.addEventListener("change", aplicarFiltros);
+if (filterArea) filterArea.addEventListener("change", aplicarFiltros);
+if (filterRegiao) filterRegiao.addEventListener("change", aplicarFiltros);
