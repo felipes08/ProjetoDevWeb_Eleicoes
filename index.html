@@ -114,6 +114,70 @@
 
     </main>
 
+    <div id="modal-proposta" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Cadastrar Nova Proposta</h3>
+                <button id="btn-close-modal" class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <form id="form-nova-proposta">
+                <div class="input-group">
+                    <label for="prop-titulo">Título da Proposta</label>
+                    <input type="text" id="prop-titulo" class="form-input" required placeholder="Ex: Ampliação do SUS">
+                </div>
+
+                <div class="input-group">
+                    <label for="prop-desc">Descrição Detalhada</label>
+                    <textarea id="prop-desc" rows="4" class="form-input" required placeholder="Descreva os detalhes da diretriz..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="prop-candidato">Nome do Candidato</label>
+                    <input type="text" id="prop-candidato" class="form-input" required placeholder="Ex: Mariana Silva de Souza">
+                </div>
+
+                <div class="input-group">
+                    <label for="prop-partido">Partido</label>
+                    <input type="text" id="prop-partido" class="form-input" required placeholder="Ex: Partido da Inovação Digital (PID)">
+                </div>
+
+                <div class="filters-selectors">
+                    <div class="filter-group">
+                        <label for="prop-cargo">Cargo</label>
+                        <select id="prop-cargo" class="form-input" required>
+                            <option value="presidente">Presidente</option>
+                            <option value="governador">Governador</option>
+                            <option value="senador">Senador</option>
+                            <option value="deputado">Deputado Federal</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="prop-area">Área Temática</label>
+                        <select id="prop-area" class="form-input" required>
+                            <option value="saude">Saúde Pública</option>
+                            <option value="educacao">Educação & Tecnologia</option>
+                            <option value="seguranca">Segurança</option>
+                            <option value="infraestrutura">Infraestrutura</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="prop-regiao">Região/Escopo</label>
+                        <select id="prop-regiao" class="form-input" required>
+                            <option value="nacional">Escopo Nacional</option>
+                            <option value="sp-capital">São Paulo (Capital)</option>
+                            <option value="rio">Rio de Janeiro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary-auth" style="margin-top: 1.5rem;">
+                    Salvar
+                </button>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-details">
