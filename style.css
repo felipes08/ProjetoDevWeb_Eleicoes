@@ -644,6 +644,112 @@ footer {
 textarea.form-input {
     resize: vertical;
 }
+
+/* ==========================================================================
+   VISUAL DO CARTÃO DE PROPOSTAS
+   ========================================================================== */
+.proposal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.tag-blue {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    margin-bottom: 1rem;
+}
+
+.author-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #64748b;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-info strong {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.author-info span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.btn-favorite {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-favorite:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
@@ -673,5 +779,10 @@ textarea.form-input {
     .admin-action a {
         display: block;
         text-align: center;
+    }
+
+    .filters-selectors {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
